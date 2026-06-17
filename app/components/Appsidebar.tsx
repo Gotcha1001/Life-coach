@@ -50,10 +50,10 @@ export function AppSidebar() {
               transition={{ duration: 0.2 }}
             >
               <p className="font-serif text-sm font-bold text-purple-200 leading-tight">
-                Wizardry
+                Your Life Coach
               </p>
               <p className="font-serif text-xs text-purple-400 leading-tight">
-                Insights
+                One on One
               </p>
             </motion.div>
           )}
