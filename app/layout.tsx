@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soul Transactions",
+  title: "AI Lifecoach",
   description:
-    "Answer 5 questions and have an AI model tell you your purpose here",
+    "Answer some questions and get free life coaching and advice with a weekly checkin to see what you have achieved",
 };
 
 export default function RootLayout({

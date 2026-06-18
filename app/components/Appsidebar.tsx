@@ -14,6 +14,7 @@ import {
   Wand2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { href: "/dashboard/plan", icon: Home, label: "Plan" },
@@ -100,6 +101,9 @@ export function AppSidebar() {
         })}
       </nav>
 
+      {/* <div className="px-3 pb-3 flex items-center mx-auto">
+        <ThemeToggle />
+      </div> */}
       {/* Divider */}
       <div className="mystical-divider mx-3 mb-3" />
 

@@ -112,6 +112,7 @@ export default function PlanPage() {
   return (
     <div className="min-h-screen p-6 md:p-10">
       {/* Page title */}
+
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
