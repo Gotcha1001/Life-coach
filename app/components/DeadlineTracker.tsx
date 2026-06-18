@@ -10,11 +10,11 @@ import { Calendar, CheckCircle2, Clock, AlertTriangle } from "lucide-react";
 type Status = "upcoming" | "due-today" | "overdue" | "complete";
 
 type Props = {
-  nextCheckinDate?: number | null;  // Unix timestamp from session
+  nextCheckinDate?: number | null; // Unix timestamp from session
   sessionStatus?: "generating" | "active" | "complete" | "abandoned";
-  weekNumber?: number;              // Current week number (for label context)
+  weekNumber?: number; // Current week number (for label context)
   // Visual variant
-  variant?: "badge" | "card";      // badge = compact inline, card = fuller panel
+  variant?: "badge" | "card"; // badge = compact inline, card = fuller panel
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -115,7 +115,9 @@ function BadgeVariant({
       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 ${config.badgeClass}`}
     >
       {/* Pulse dot */}
-      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${config.dotClass}`} />
+      <span
+        className={`w-1.5 h-1.5 rounded-full shrink-0 ${config.dotClass}`}
+      />
 
       {/* Label */}
       <span className={`text-xs font-medium ${config.labelColor}`}>
@@ -126,9 +128,7 @@ function BadgeVariant({
       <span className="text-border text-xs">·</span>
 
       {/* Countdown */}
-      <span className={`text-xs ${config.countdownColor}`}>
-        {countdown}
-      </span>
+      <span className={`text-xs ${config.countdownColor}`}>{countdown}</span>
     </motion.div>
   );
 }
@@ -165,10 +165,10 @@ function CardVariant({
           status === "complete"
             ? "bg-emerald-500/10"
             : status === "overdue"
-            ? "bg-destructive/10"
-            : status === "due-today"
-            ? "bg-primary/10"
-            : "bg-muted"
+              ? "bg-destructive/10"
+              : status === "due-today"
+                ? "bg-primary/10"
+                : "bg-muted"
         }`}
       >
         <Icon
@@ -176,19 +176,17 @@ function CardVariant({
             status === "complete"
               ? "text-emerald-500"
               : status === "overdue"
-              ? "text-destructive"
-              : status === "due-today"
-              ? "text-primary"
-              : "text-muted-foreground"
+                ? "text-destructive"
+                : status === "due-today"
+                  ? "text-primary"
+                  : "text-muted-foreground"
           }`}
         />
       </div>
 
       {/* Text */}
       <div className="flex-1 min-w-0">
-        <p className={`text-sm font-semibold ${config.labelColor}`}>
-          {label}
-        </p>
+        <p className={`text-sm font-semibold ${config.labelColor}`}>{label}</p>
         {dateString && (
           <p className="text-xs text-muted-foreground mt-0.5 truncate">
             {dateString}
@@ -203,10 +201,10 @@ function CardVariant({
           status === "complete"
             ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
             : status === "overdue"
-            ? "bg-destructive/10 text-destructive"
-            : status === "due-today"
-            ? "bg-primary/10 text-primary"
-            : "bg-muted text-muted-foreground"
+              ? "bg-destructive/10 text-destructive"
+              : status === "due-today"
+                ? "bg-primary/10 text-primary"
+                : "bg-muted text-muted-foreground"
         }`}
       >
         {countdown}
@@ -254,11 +252,12 @@ export default function DeadlineTracker({
 
     return {
       status: s,
-      label: s === "overdue"
-        ? "Check-in overdue"
-        : s === "due-today"
-        ? "Check in today"
-        : `Next check-in: ${formatCheckinDate(nextCheckinDate)}`,
+      label:
+        s === "overdue"
+          ? "Check-in overdue"
+          : s === "due-today"
+            ? "Check in today"
+            : `Next check-in: ${formatCheckinDate(nextCheckinDate)}`,
       countdown: countdownLabel,
       dateString: formatCheckinDate(nextCheckinDate),
       config: STATUS_CONFIG[s],

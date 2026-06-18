@@ -110,7 +110,7 @@ export default function PlanPage() {
   const weekNumber = (data?.checkins.length ?? 0) + 1;
 
   return (
-    <div className="min-h-screen p-6 md:p-10">
+    <div className="min-h-screen p-6 md:p-10 ">
       {/* Page title */}
 
       <motion.div
@@ -124,14 +124,14 @@ export default function PlanPage() {
         <h1 className="text-3xl font-bold text-foreground max-w-xl mx-auto">
           {session.goalDescription}
         </h1>
-        <p className="text-muted-foreground text-sm max-w-md mx-auto flex items-center justify-center gap-1.5">
-          <Calendar className="w-3.5 h-3.5" />
+        <p className="text-muted-foreground text-sm max-w-md mx-auto flex items-center justify-center gap-1.5 ">
+          <Calendar className="w-3.5 h-3.5 " />
           {session.timelineMonths}-month journey · Month{" "}
           {session.currentMonth ?? 1} of {session.timelineMonths}
         </p>
       </motion.div>
 
-      <div className="max-w-2xl mx-auto space-y-8">
+      <div className="max-w-2xl mx-auto space-y-8 ">
         {/* ── Next check-in ── */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}

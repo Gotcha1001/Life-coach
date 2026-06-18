@@ -13,9 +13,7 @@ type Props = {
 export default function MonthlyPlanCard({ plan, currentMonth }: Props) {
   return (
     <div className="w-full max-w-2xl mx-auto space-y-4">
-      <h2 className="text-xl font-semibold text-foreground mb-6">
-        Your Plan
-      </h2>
+      <h2 className="text-xl font-semibold text-foreground mb-6">Your Plan</h2>
 
       {plan.months.map((month, index) => {
         const isPast = month.month < currentMonth;
@@ -30,14 +28,14 @@ export default function MonthlyPlanCard({ plan, currentMonth }: Props) {
             transition={{ delay: index * 0.08, duration: 0.35 }}
             className={`rounded-2xl border p-5 transition-all ${
               isActive
-                ? "border-primary bg-primary/5 shadow-sm"
+                ? "border-primary text-white bg-radial from-purple-500 to-indigo-900 shadow-sm"
                 : isPast
-                ? "border-border bg-muted/40 opacity-60"
-                : "border-border bg-card"
+                  ? "border-border bg-muted/40 opacity-60"
+                  : "border-border bg-card"
             }`}
           >
             {/* Month header */}
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between mb-3 ">
               <div className="flex items-center gap-3">
                 {/* Status indicator */}
                 <div
@@ -45,17 +43,17 @@ export default function MonthlyPlanCard({ plan, currentMonth }: Props) {
                     isPast
                       ? "bg-muted-foreground"
                       : isActive
-                      ? "bg-primary animate-pulse"
-                      : "bg-border"
+                        ? "bg-primary animate-pulse"
+                        : "bg-border"
                   }`}
                 />
                 <span
                   className={`text-sm font-semibold uppercase tracking-wide ${
                     isActive
-                      ? "text-primary"
+                      ? "text-white"
                       : isPast
-                      ? "text-muted-foreground"
-                      : "text-foreground"
+                        ? "text-muted-foreground"
+                        : "text-foreground"
                   }`}
                 >
                   Month {month.month}
@@ -91,16 +89,16 @@ export default function MonthlyPlanCard({ plan, currentMonth }: Props) {
 
             {/* Weekly tasks — only expanded for active and future months */}
             {!isPast && (
-              <div className="space-y-2">
+              <div className="space-y-2 ">
                 {month.tasks.map((task, i) => (
                   <div
                     key={i}
                     className="flex items-start gap-3 text-sm text-muted-foreground"
                   >
-                    <span className="mt-0.5 text-xs font-mono text-muted-foreground/60 w-12 shrink-0">
+                    <span className="mt-0.5 text-xs font-mono text-white w-12 shrink-0">
                       Week {i + 1}
                     </span>
-                    <span>{task}</span>
+                    <span className="text-white">{task}</span>
                   </div>
                 ))}
               </div>
