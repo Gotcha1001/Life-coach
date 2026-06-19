@@ -1,7 +1,5 @@
 // app/dashboard/layout.tsx
-
 import { AppSidebar } from "../components/Appsidebar";
-
 export default function DashboardLayout({
   children,
 }: {
