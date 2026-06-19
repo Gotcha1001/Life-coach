@@ -899,14 +899,17 @@ export default function DashboardPage() {
           transition={{ delay: 1.3, duration: 0.6 }}
           className="space-y-4 mb-10"
         >
-          <p className="text-purple-300/80 text-lg max-w-xl mx-auto leading-relaxed font-body">
-            Life Coach AI exists for one purpose: to turn a vague wish into a
+          <RevealText
+            text={`    Life Coach AI exists for one purpose: to turn a vague wish into a
             real plan, and a real plan into a real result. Thousands of seekers
             have walked through this sanctum — breaking down distant goals into
             months, weeks, and small daily steps, then returning each week to
-            keep the path honest.
-          </p>
-          <p className="text-purple-300/60 text-sm max-w-lg mx-auto leading-relaxed font-body">
+            keep the path honest.`}
+            speed={35}
+            className="blocktext-purple-300/80 text-lg max-w-xl mx-auto leading-relaxed font-body"
+          />
+
+          <p className="text-purple-300/60 text-sm max-w-lg mx-auto leading-relaxed font-body mt-4">
             The ones who reach their goal rarely do it in one great leap. They
             do it in small, unglamorous steps, repeated almost every day — and
             they let the oracle hold them accountable when it would be easier to
