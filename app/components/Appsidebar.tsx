@@ -168,6 +168,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 const navItems = [
+  { href: "/dashboard", icon: Home, label: "Dashboard" },
   { href: "/dashboard/plan", icon: Home, label: "Plan" },
   { href: "/dashboard/checkin", icon: Sparkles, label: "CheckIn" },
   { href: "/dashboard/history", icon: History, label: "History" },
